@@ -30,3 +30,8 @@ Jangan commit file `.env.local`.
 ## Deploy
 
 Vercel Hobby — Root Directory = `web`.
+
+Repo GitHub sudah terhubung ke project Vercel `designtuntas`: setiap push ke `main` akan auto-deploy.
+
+- Live: https://designtuntas.vercel.app
+- GitHub: https://github.com/tipir007/tuntasdesign.id
