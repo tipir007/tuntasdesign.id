@@ -122,7 +122,8 @@ Referensi teknis: project `D:\training\Android studio\Project\site` (`review.md`
 
 **Fase 1 implementasi:** kode di folder [`web/`](web/) — landing + Tuti AI + OpenRouter.  
 **Live (Vercel Hobby):** https://designtuntas.vercel.app — homepage + Twin API terverifikasi (publik).  
-Cadangan: https://web-chi-ten-37.vercel.app
+Cadangan: https://web-chi-ten-37.vercel.app  
+**GitHub:** https://github.com/tipir007/tuntasdesign.id — terhubung ke Vercel (`Root Directory = web`), auto-deploy tiap push `main`.
 
 ```mermaid
 flowchart LR
