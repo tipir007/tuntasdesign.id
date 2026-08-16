@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0c1f24;
+  --paper: #f4f8f7;
+  --sand: #e4eeeb;
+  --teal: #1a9b8e;
+  --teal-bright: #3dcdc0;
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-sand: var(--sand);
+  --color-teal: var(--teal);
+  --color-teal-bright: var(--teal-bright);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.hero-canvas {
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(46, 196, 182, 0.45), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 15% 80%, rgba(12, 31, 36, 0.5), transparent 50%),
+    linear-gradient(135deg, #0c1f24 0%, #163a42 42%, #1a9b8e 100%);
+  background-size: 120% 120%;
+  animation: drift 18s ease-in-out infinite alternate;
+}
+
+.portfolio-tile {
+  background:
+    linear-gradient(160deg, rgba(12, 31, 36, 0.15), rgba(12, 31, 36, 0.75)),
+    linear-gradient(45deg, #1a9b8e, #0c1f24 60%);
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.portfolio-tile:hover {
+  transform: translateY(-4px);
+  filter: saturate(1.1);
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease both;
+}
+
+.delay-1 {
+  animation-delay: 0.12s;
+}
+.delay-2 {
+  animation-delay: 0.24s;
+}
+.delay-3 {
+  animation-delay: 0.36s;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--ink);
+  opacity: 0.35;
+  animation: blink 1s infinite ease-in-out;
+}
+
+.typing-dot.delay-150 {
+  animation-delay: 0.15s;
+}
+.typing-dot.delay-300 {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  from {
+    background-position: 0% 40%;
+  }
+  to {
+    background-position: 100% 60%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-canvas,
+  .animate-fade-up,
+  .typing-dot,
+  .portfolio-tile {
+    animation: none !important;
+    transition: none !important;
+  }
+}
