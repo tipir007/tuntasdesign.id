@@ -36,3 +36,4 @@ Repo GitHub sudah terhubung ke project Vercel `designtuntas`: setiap push ke `ma
 - Live: https://designtuntas.vercel.app
 - GitHub: https://github.com/tipir007/tuntasdesign.id
 - **Plan.md setelah link GitHub–Vercel:** [`plan.md`](plan.md) (roadmap fase, BMC, biaya, status live & auto-deploy)
+- **Fase A kit (IG / WA / sebar link):** [`fase-a-kit.md`](fase-a-kit.md)

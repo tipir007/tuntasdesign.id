@@ -38,6 +38,16 @@ export default function Footer() {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href={BRAND.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-teal"
+              >
+                Instagram @{BRAND.instagramHandle}
+              </a>
+            </li>
           </ul>
         </div>
       </div>

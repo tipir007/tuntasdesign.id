@@ -11,7 +11,9 @@ export const BRAND = {
   ],
   hours: "08.00–22.00 WIB",
   responseEta: "sekitar 15 menit pada jam operasional",
-  location: "Berbasis Bogor, layanan online se-Indonesia"
+  location: "Berbasis Bogor, layanan online se-Indonesia",
+  instagramHandle: "designtuntas",
+  instagramUrl: "https://instagram.com/designtuntas"
 } as const;
 
 export const SERVICES = [
@@ -82,22 +84,50 @@ export const PORTFOLIO_ITEMS = [
   {
     title: "Resume ATS",
     category: "CV",
-    note: "Contoh format profesional (placeholder)"
+    note: "Format profesional, data disamarkan",
+    image: "/portfolio/portfolio-cv-ats.jpg"
   },
   {
-    title: "Paket Sempro",
+    title: "CV Fresh Graduate",
+    category: "CV",
+    note: "Siap lamar, identitas fiktif",
+    image: "/portfolio/portfolio-cv-fresh.jpg"
+  },
+  {
+    title: "Outline Skripsi",
     category: "Skripsi",
-    note: "Struktur proposal yang rapi (placeholder)"
+    note: "Struktur bab, tanpa data pribadi",
+    image: "/portfolio/portfolio-skripsi-outline.jpg"
   },
   {
-    title: "Poster & Feed",
+    title: "Sampul Sempro",
+    category: "Skripsi",
+    note: "Contoh naskah anonim S1 Teknik",
+    image: "/portfolio/portfolio-skripsi-sempro.jpg"
+  },
+  {
+    title: "Poster Seminar",
     category: "Visual",
-    note: "Sample visual brand (placeholder)"
+    note: "Poster event kampus (sample)",
+    image: "/portfolio/portfolio-poster-event.jpg"
   },
   {
-    title: "Gambar Teknik",
+    title: "Logo UMKM",
+    category: "Visual",
+    note: "Identitas Kopi Savana (sample)",
+    image: "/portfolio/portfolio-logo-umkm.jpg"
+  },
+  {
+    title: "Feed Instagram",
+    category: "Visual",
+    note: "Sistem visual toko tanaman (sample)",
+    image: "/portfolio/portfolio-feed-ig.jpg"
+  },
+  {
+    title: "Gambar Teknik 3D",
     category: "3D",
-    note: "Visualisasi engineering (placeholder)"
+    note: "Exploded view pompa industri (sample)",
+    image: "/portfolio/portfolio-3d-teknik.jpg"
   }
 ] as const;
 

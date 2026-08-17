@@ -123,7 +123,8 @@ Referensi teknis: project `D:\training\Android studio\Project\site` (`review.md`
 **Fase 1 implementasi:** kode di folder [`web/`](web/) — landing + Tuti AI + OpenRouter.  
 **Live (Vercel Hobby):** https://designtuntas.vercel.app — homepage + Twin API terverifikasi (publik).  
 Cadangan: https://web-chi-ten-37.vercel.app  
-**GitHub:** https://github.com/tipir007/tuntasdesign.id — terhubung ke Vercel (`Root Directory = web`), auto-deploy tiap push `main`.
+**GitHub:** https://github.com/tipir007/tuntasdesign.id — terhubung ke Vercel (`Root Directory = web`), auto-deploy tiap push `main`.  
+**Fase A (soft bisnis):** 8 sample portofolio di website; kit IG/WA/sebar di [`fase-a-kit.md`](fase-a-kit.md). Domain `.id` ditunda.
 
 ```mermaid
 flowchart LR
