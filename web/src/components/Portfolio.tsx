@@ -8,28 +8,67 @@ export default function Portfolio() {
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-teal">Portofolio</p>
         <h2 className="mt-3 font-display text-3xl text-ink md:text-5xl">Cuplikan karya.</h2>
         <p className="mt-4 max-w-xl text-ink/70">
-          Sample starter — mockup dan versi anonim. Karya klien ditampilkan hanya dengan izin;
-          CV dan skripsi tanpa data pribadi.
+          Sample starter — versi anonim siap unduh. CV tersedia PDF; karya 3D tersedia PNG
+          (gambar teknik, model, animasi).
         </p>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {PORTFOLIO_ITEMS.map((item) => (
+          {PORTFOLIO_ITEMS.map((item) => {
+            const isPng = item.image.endsWith(".png");
+            const downloadHref =
+              "pdf" in item && item.pdf
+                ? item.pdf
+                : isPng
+                  ? item.image
+                  : null;
+            const downloadLabel = downloadHref?.endsWith(".pdf") ? "PDF" : "PNG";
+
+            return (
             <figure key={item.title} className="group">
               <div className="relative aspect-[4/5] overflow-hidden bg-sand">
                 <Image
                   src={item.image}
                   alt={`${item.category}: ${item.title}`}
                   fill
+                  unoptimized={isPng}
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                  className={`object-cover transition duration-500 group-hover:scale-[1.03] ${
+                    item.title.includes("Food Crusher") || item.title.includes("Dudukan Pisau")
+                      ? "object-[60%_20%]"
+                      : "object-top"
+                  }`}
                 />
+                {downloadHref ? (
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent p-3 pt-8 opacity-0 transition group-hover:opacity-100">
+                    <a
+                      href={downloadHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download={downloadHref.endsWith(".png")}
+                      className="block w-full rounded bg-teal px-3 py-2 text-center text-xs font-medium text-white transition hover:bg-teal/90"
+                    >
+                      Lihat &amp; Unduh {downloadLabel}
+                    </a>
+                  </div>
+                ) : null}
               </div>
               <figcaption className="mt-3">
                 <p className="text-xs uppercase tracking-wider text-teal">{item.category}</p>
                 <p className="font-display text-xl text-ink">{item.title}</p>
                 <p className="mt-1 text-sm text-ink/65">{item.note}</p>
+                {downloadHref ? (
+                  <a
+                    href={downloadHref}
+                    download
+                    className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-teal hover:underline"
+                  >
+                    Unduh {downloadLabel}
+                    <span aria-hidden="true">↓</span>
+                  </a>
+                ) : null}
               </figcaption>
             </figure>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

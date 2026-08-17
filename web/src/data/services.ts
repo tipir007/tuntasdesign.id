@@ -82,16 +82,32 @@ export const PROCESS_STEPS = [
 
 export const PORTFOLIO_ITEMS = [
   {
-    title: "Resume ATS",
+    title: "Resume Profesional ATS",
     category: "CV",
-    note: "Format profesional, data disamarkan",
-    image: "/portfolio/portfolio-cv-ats.jpg"
+    note: "Data engineer & PM, identitas fiktif",
+    image: "/portfolio/portfolio-cv-ats.jpg",
+    pdf: "/portfolio/cv/cv-profesional-data-engineer.pdf"
+  },
+  {
+    title: "CV Maintenance & Instrumentasi",
+    category: "CV",
+    note: "Teknisi industri, data disamarkan",
+    image: "/portfolio/portfolio-cv-instrumentasi.jpg",
+    pdf: "/portfolio/cv/cv-maintenance-instrumentasi.pdf"
+  },
+  {
+    title: "CV Accounting Programmer",
+    category: "CV",
+    note: "Fresh graduate D3, magna cum laude",
+    image: "/portfolio/portfolio-cv-accounting.jpg",
+    pdf: "/portfolio/cv/cv-accounting-programmer.pdf"
   },
   {
     title: "CV Fresh Graduate",
     category: "CV",
-    note: "Siap lamar, identitas fiktif",
-    image: "/portfolio/portfolio-cv-fresh.jpg"
+    note: "Mahasiswa S1 Teknologi Pangan, anonim",
+    image: "/portfolio/portfolio-cv-fresh.jpg",
+    pdf: "/portfolio/cv/cv-fresh-graduate-teknologi-pangan.pdf"
   },
   {
     title: "Outline Skripsi",
@@ -124,10 +140,34 @@ export const PORTFOLIO_ITEMS = [
     image: "/portfolio/portfolio-feed-ig.jpg"
   },
   {
-    title: "Gambar Teknik 3D",
+    title: "Gambar Teknik — Food Crusher",
     category: "3D",
-    note: "Exploded view pompa industri (sample)",
-    image: "/portfolio/portfolio-3d-teknik.jpg"
+    note: "Drawing assembly mesin food crusher (SolidWorks)",
+    image: "/portfolio/3d/portfolio-3d-food-crusher-anon.png"
+  },
+  {
+    title: "Gambar Teknik — Dudukan Pisau",
+    category: "3D",
+    note: "Detail part dudukan pisau cutmix (SolidWorks)",
+    image: "/portfolio/3d/portfolio-3d-dudukan-pisau-anon.png"
+  },
+  {
+    title: "Model 3D — Kapal Nelayan",
+    category: "3D",
+    note: "Scene Blender, render still frame",
+    image: "/portfolio/3d/portfolio-3d-kapal-nelayan.png"
+  },
+  {
+    title: "Desain 3D — Layout Pabrik Makanan",
+    category: "3D",
+    note: "Layout pabrik makanan, SketchUp",
+    image: "/portfolio/3d/portfolio-3d-packing-bumbu.png"
+  },
+  {
+    title: "Animasi 3D — Study Scene",
+    category: "3D",
+    note: "Character & environment render, Blender",
+    image: "/portfolio/3d/portfolio-3d-animasi-study.png"
   }
 ] as const;
 
