@@ -8,18 +8,18 @@ type ChatMessage = {
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export const maxDuration = 30;
+export const maxDuration = 55;
 
-const REQUEST_TIMEOUT_MS = 15000;
+const REQUEST_TIMEOUT_MS = 25_000;
 const RATE_LIMIT_MAX = 15;
 const RATE_LIMIT_WINDOW_MS = 60_000;
 
 const MODELS = [
-  "qwen/qwen3-next-80b-a3b-instruct:free",
-  "meta-llama/llama-3.3-70b-instruct:free",
-  "google/gemma-4-31b-it:free",
+  "nvidia/nemotron-3-ultra-550b-a55b:free",
   "nvidia/nemotron-3-super-120b-a12b:free",
-  "openai/gpt-oss-20b:free"
+  "google/gemma-4-31b-it:free",
+  "openai/gpt-oss-20b:free",
+  "openrouter/free",
 ];
 
 const rateLimitBuckets = new Map<string, { count: number; resetAt: number }>();
@@ -170,15 +170,19 @@ export async function POST(request: Request) {
       );
     }
 
+    const RETRY_DELAYS = [300, 600, 1000, 1500, 2000];
     let answer: string | null = null;
-    for (const model of MODELS) {
+    for (let i = 0; i < MODELS.length; i++) {
+      const model = MODELS[i];
       const result = await requestModel(model, apiKey, sanitizedMessages);
       if (result.ok) {
         answer = result.answer;
         break;
       }
       console.error(`[digital-twin] Model "${model}" failed:`, result.detail);
-      await sleep(300);
+      if (i < MODELS.length - 1) {
+        await sleep(RETRY_DELAYS[i] ?? 2000);
+      }
     }
 
     if (!answer) {

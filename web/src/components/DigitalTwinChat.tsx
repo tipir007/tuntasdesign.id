@@ -53,7 +53,13 @@ export default function DigitalTwinChat() {
 
       const payload = (await response.json()) as { answer?: string; error?: string };
       if (!response.ok || !payload.answer) {
-        throw new Error(payload.error || "Tidak bisa menghasilkan jawaban.");
+        const fallback =
+          response.status === 429
+            ? "Terlalu banyak permintaan. Tunggu sebentar lalu coba lagi."
+            : response.status === 502
+              ? "Asisten sedang tidak tersedia. Coba lagi atau hubungi WhatsApp."
+              : "Tidak bisa menghasilkan jawaban.";
+        throw new Error(payload.error || fallback);
       }
 
       setMessages((prev) => [
