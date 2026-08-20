@@ -44,16 +44,18 @@ export const PRICE_GROUPS: PriceGroup[] = [
       {
         heading: "Per bab",
         rows: [
+          { item: "Abstrak", price: "Rp 100.000" },
+          { item: "Abstrak (Bahasa Inggris)", price: "Rp 150.000" },
           { item: "Bab I (Pendahuluan)", price: "Rp 200.000" },
-          { item: "Bab I (Pendahuluan) Bahasa Inggris", price: "Rp 220.000" },
+          { item: "Bab I (Pendahuluan, Bahasa Inggris)", price: "Rp 220.000" },
           { item: "Bab II (Tinjauan Pustaka)", price: "Rp 400.000" },
-          { item: "Bab II (Tinjauan Pustaka) Bahasa Inggris", price: "Rp 420.000" },
+          { item: "Bab II (Tinjauan Pustaka, Bahasa Inggris)", price: "Rp 420.000" },
           { item: "Bab III (Metodologi)", price: "Rp 200.000" },
-          { item: "Bab III (Metodologi) Bahasa Inggris", price: "Rp 220.000" },
+          { item: "Bab III (Metodologi, Bahasa Inggris)", price: "Rp 220.000" },
           { item: "Bab IV (Hasil & Pembahasan)", price: "Rp 650.000" },
-          { item: "Bab IV (Hasil & Pembahasan) Bahasa Inggris", price: "Rp 800.000" },
+          { item: "Bab IV (Hasil & Pembahasan, Bahasa Inggris)", price: "Rp 800.000" },
           { item: "Bab V (Kesimpulan & Saran)", price: "Rp 650.000" },
-          { item: "Bab V (Kesimpulan & Saran) Bahasa Inggris", price: "Rp 220.000" },
+          { item: "Bab V (Kesimpulan & Saran, Bahasa Inggris)", price: "Rp 220.000" },
           { item: "Revisi", price: "Rp 50.000" },
           { item: "Lampiran", price: "Rp 50.000" },
           { item: "Daftar isi / tabel / gambar / pustaka / nomor halaman", price: "Rp 25.000 /item" }
@@ -130,8 +132,14 @@ export const PRICE_GROUPS: PriceGroup[] = [
     tables: [
       {
         rows: [
-          { item: "Domestik (gambar teknik, animasi, karakter, interior)", price: "Rp 150.000–300.000" },
-          { item: "Internasional", price: "USD 20–50" }
+          {
+            item: "Domestik (gambar teknik, animasi, karakter, interior)",
+            price: "Rp 150.000–300.000"
+          },
+          {
+            item: "Internasional (gambar teknik, animasi, karakter, interior)",
+            price: "USD 20–50"
+          }
         ]
       }
     ]

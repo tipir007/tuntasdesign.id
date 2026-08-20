@@ -132,7 +132,7 @@ Fokus jurusan **Teknik**. Di luar Teknik → konfirmasi via WhatsApp.
 
 ### D4. Apakah membantu proposal, bab, analisis, atau hanya review?
 **Jawaban:**  
-Membantu proposal, bab, analisis data, dan review.
+Membantu abstrak, proposal, bab, analisis data, dan review. Tersedia versi Bahasa Indonesia dan Bahasa Inggris (harga berbeda; lihat daftar resmi).
 
 ### D5. Berapa lama / berapa sesi biasanya?
 **Jawaban:**  
@@ -150,16 +150,18 @@ Materi skripsi yang sudah ada (draft, outline, brief dosen, data, template kampu
 **Jawaban:**  
 
 **Per bab:**
+- Abstrak: Rp 100.000  
+- Abstrak (Bahasa Inggris): Rp 150.000  
 - Bab I (Pendahuluan): Rp 200.000  
-- Bab I Bahasa Inggris: Rp 220.000  
+- Bab I (Pendahuluan, Bahasa Inggris): Rp 220.000  
 - Bab II (Tinjauan Pustaka): Rp 400.000  
-- Bab II Bahasa Inggris: Rp 420.000  
+- Bab II (Tinjauan Pustaka, Bahasa Inggris): Rp 420.000  
 - Bab III (Metodologi): Rp 200.000  
-- Bab III Bahasa Inggris: Rp 220.000  
+- Bab III (Metodologi, Bahasa Inggris): Rp 220.000  
 - Bab IV (Hasil & Pembahasan): Rp 650.000  
-- Bab IV Bahasa Inggris: Rp 800.000  
+- Bab IV (Hasil & Pembahasan, Bahasa Inggris): Rp 800.000  
 - Bab V (Kesimpulan & Saran): Rp 650.000  
-- Bab V Bahasa Inggris: Rp 220.000  
+- Bab V (Kesimpulan & Saran, Bahasa Inggris): Rp 220.000  
 - Revisi: Rp 50.000  
 - Lampiran: Rp 50.000  
 - Daftar isi / tabel / gambar / pustaka / nomor halaman: Rp 25.000 per item  
@@ -283,8 +285,8 @@ File Blender, serta format SolidWorks (`.sldprt`, `.sldasm`, `.slddrw`). Format 
 
 ### F8. Harga design 3D?
 **Jawaban:**  
-- Domestik: sekitar Rp 150.000–300.000  
-- Internasional: sekitar USD 20–50  
+- Domestik (gambar teknik, animasi, karakter, interior): sekitar Rp 150.000–300.000  
+- Internasional (gambar teknik, animasi, karakter, interior): sekitar USD 20–50  
 
 Harga final tergantung kompleksitas; konfirmasi via WhatsApp.
 
