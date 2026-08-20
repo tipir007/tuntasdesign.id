@@ -16,6 +16,11 @@ export default function Footer() {
             {SERVICES.map((s) => (
               <li key={s.id}>{s.title}</li>
             ))}
+            <li>
+              <a href="#harga" className="hover:text-teal">
+                Daftar harga
+              </a>
+            </li>
           </ul>
         </div>
         <div>

@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import Pricing from "@/components/Pricing";
 import HowItWorks from "@/components/HowItWorks";
 import DigitalTwinChat from "@/components/DigitalTwinChat";
 import Portfolio from "@/components/Portfolio";
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
+        <Pricing />
         <HowItWorks />
         <DigitalTwinChat />
         <Portfolio />

@@ -2,7 +2,7 @@ import { PROCESS_STEPS } from "@/data/services";
 
 export default function HowItWorks() {
   return (
-    <section id="cara-kerja" className="bg-sand px-5 py-20 md:px-8 md:py-28">
+    <section id="cara-kerja" className="bg-paper px-5 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-6xl">
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-teal">Cara kerja</p>
         <h2 className="mt-3 font-display text-3xl text-ink md:text-5xl">Dari chat sampai tuntas.</h2>

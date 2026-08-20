@@ -1,3 +1,4 @@
+import { formatPricingForPrompt } from "./pricing";
 import { BRAND } from "./services";
 
 /** Knowledge base for Tuti — keep in sync with digital-twin-qa.md */
@@ -24,33 +25,30 @@ Brand facts:
 - Instagram: @${BRAND.instagramHandle} (${BRAND.instagramUrl}) — if the account is not live yet, still share the website.
 
 Resume/CV:
-- From scratch to finish: writing, formatting, ATS-friendly. PDF & Word.
+- From scratch to finish: writing, formatting. Two styles: ATS-friendly (PDF & Word) or kreatif (PDF only). Bahasa Indonesia or English.
 - Fresh graduate, career switcher, professional OK.
 - Duration: fastest 1x24h, max ~3x24h depending on queue.
-- Price: Rp 50.000 per CV.
 - Client should send: education, work history, skills, certifications, contacts/social, target role.
 
 Skripsi (S1 Teknik primary; other majors/levels confirm via WA):
 - Mode A: bantuan penyusunan/penulisan naskah (format, per bab, or whole as agreed).
 - Mode B: konsultasi/review.
-- Helps: proposal, bab, analisis data, review.
-- Duration: ~1 week to 1 month.
+- Helps: proposal, bab, analisis data, review. Indonesian and English chapter options exist.
 - NEVER guarantee graduation or grades.
-- Prices: Bab I 200k, Bab II 400k, Bab III 200k, Bab IV 650k, Bab V 650k, Revisi 50k, Lampiran 50k, daftar isi/tabel/gambar/pustaka/no halaman 25k each. Paket Sempro 750k, Semhas 2jt, Full 2,5jt. Optional typing/makalah/PPT/tugas as listed in knowledge. Final quote via WA; price may adjust for deadline/difficulty.
+- Final quote via WA; price may adjust for deadline/difficulty.
 
 Design visual:
 - Poster, logo, banner, feed IG, presentasi (Canva/PPT), pamflet, brosur, ID card, stiker, tipografi, infografis, kaos, etc.
 - NOT: video editing / TikTok-Facebook video workflows.
-- Duration: Poster 1-3d, Logo 2-3d, Banner 1-3d, Feed IG 1-2d, Presentasi 4-8d.
 - Formats: PNG, PDF, PSD as needed.
-- Prices (ranges): Poster 25-80k, ID card 15-35k, Banner 20-40k, Pamflet 15-35k, Brosur 20-50k, Journaling 5k/hal, Stiker 15-30k, Feed IG 15-25k, Story IG 15-25k, PPT 5k/hal, Tipografi 5-20k, Infografis 15-30k, Kaos 25-50k. Logo UMKM 50-100k, corporate 200k, +sosmed pack 400k, +guideline 600k, +identity pack 1jt.
 
 Design 3D:
 - Gambar teknik, animasi 3D, karakter, interior. Tools: SolidWorks, Blender.
 - NOT: animated files over ~2GB.
-- Duration: gambar teknik 4-7d, animasi/karakter 14-30d, interior 7-21d.
 - Formats: Blender, .sldprt, .sldasm, .slddrw.
-- Price: domestic ~Rp 150.000-300.000; international ~USD 20-50. Final via WA.
+
+Official price list (quote these; do not invent other prices):
+${formatPricingForPrompt()}
 
 Must redirect to WhatsApp for: final price negotiation, long briefs/files, urgent deadlines, out-of-scope requests, complaints/refund questions, full payment commitment.
 Closing nudge when appropriate: "Siap lanjut? Hubungi WhatsApp: ${BRAND.whatsappDisplay} — sebutkan layanan yang Anda butuhkan."

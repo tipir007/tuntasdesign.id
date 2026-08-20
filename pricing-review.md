@@ -2,13 +2,20 @@
 
 Edit file ini sesuai kebutuhan. Setelah fix, bilang "lanjut implement" dan harga ini akan masuk ke website.
 
+Cara nambah baris tabel (wajib persis seperti ini, termasuk `|` kiri dan kanan):
+
+`| Nama item | Rp 00.000 |`
+
 ---
 
 ## 1. Resume / CV
 
 | Item | Harga |
 |---|---|
-| CV (dari nol sampai jadi, ATS-friendly, PDF & Word) | Rp 50.000 |
+| CV ATS-friendly, Bahasa Indonesia, PDF & Word | Rp 50.000 |
+| CV kreatif, Bahasa Indonesia, PDF saja | Rp 26.000 |
+| CV kreatif, Bahasa Inggris, PDF saja | Rp 40.000 |
+| CV ATS-friendly, Bahasa Inggris, PDF & Word | Rp 70.000 |
 
 **Durasi:** 1–3 hari (paling cepat 1×24 jam)
 
@@ -21,10 +28,15 @@ Edit file ini sesuai kebutuhan. Setelah fix, bilang "lanjut implement" dan harga
 | Item | Harga |
 |---|---|
 | Bab I (Pendahuluan) | Rp 200.000 |
+| Bab I (Pendahuluan,Bahasa Inggris ) | Rp 220.000 |
 | Bab II (Tinjauan Pustaka) | Rp 400.000 |
+| Bab II (Tinjauan Pustaka,Bahasa Inggris)  | Rp 420.000 |
 | Bab III (Metodologi) | Rp 200.000 |
+| Bab III (Metodologi,Bahasa Inggris)  | Rp 220.000 |
 | Bab IV (Hasil & Pembahasan) | Rp 650.000 |
+| Bab IV (Hasil & Pembahasan,Bahasa Inggris)  | Rp 800.000 |
 | Bab V (Kesimpulan & Saran) | Rp 650.000 |
+| Bab V (Kesimpulan & Saran,Bahasa Inggris)  | Rp 220.000 |
 | Revisi | Rp 50.000 |
 | Lampiran | Rp 50.000 |
 | Daftar isi / tabel / gambar / pustaka / nomor halaman | Rp 25.000 /item |
@@ -46,6 +58,9 @@ Edit file ini sesuai kebutuhan. Setelah fix, bilang "lanjut implement" dan harga
 | PPT / Presentasi | Rp 25.000–50.000 |
 | Tugas sekolah | Rp 15.000–50.000 |
 | Tugas kuliah | Rp 50.000–200.000 |
+| Esai | Rp 50.000 |
+| Artikel (ilmiah) | Rp 150.000 |
+| Artikel (syarat lulus) | Rp 400.000 |
 
 **Durasi:** 1 minggu – 1 bulan  
 **Fokus:** S1 Teknik (jurusan lain konfirmasi via WA)  

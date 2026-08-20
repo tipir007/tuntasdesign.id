@@ -21,12 +21,12 @@ export const SERVICES = [
     id: "cv",
     title: "Resume / CV / Portofolio",
     summary:
-      "CV dari nol hingga siap lamar: penulisan, format rapi, dan ATS-friendly. Hasil PDF & Word.",
+      "CV dari nol hingga siap lamar: ATS-friendly atau kreatif, Bahasa Indonesia atau Inggris.",
     duration: "1–3 hari (paling cepat 1×24 jam)",
-    priceFrom: "Rp 50.000",
+    priceFrom: "dari Rp 26.000",
     highlights: [
       "Fresh graduate, career switcher, profesional",
-      "Format PDF dan Word",
+      "ATS: PDF & Word · Kreatif: PDF saja",
       "Revisi selama proses hingga dinyatakan valid"
     ]
   },
@@ -35,12 +35,12 @@ export const SERVICES = [
     title: "Konsultasi & Bantuan Skripsi",
     summary:
       "Mode A: bantuan penyusunan/penulisan naskah. Mode B: konsultasi/review. Fokus S1 Teknik.",
-    duration: "1 minggu–1 bulan",
+    duration: "7–14 hari (tugas 1 minggu–1 bulan)",
     priceFrom: "dari Rp 200.000 / bab",
     highlights: [
-      "Proposal, bab, analisis data, review",
+      "Proposal, bab, analisis data, review — ID & Inggris",
       "Tidak menjamin kelulusan atau nilai",
-      "Paket Sempro, Semhas, dan Full tersedia"
+      "Paket Sempro, Semhas, Full, dan tugas akademik"
     ]
   },
   {

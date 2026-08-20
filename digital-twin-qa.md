@@ -77,7 +77,7 @@ Resume/CV atau bantuan skripsi.
 
 ### C1. Apa saja yang termasuk jasa pembuatan Resume/CV?
 **Jawaban:**  
-Pembuatan CV dari awal hingga selesai agar menampilkan versi terbaik diri klien: penulisan konten, perapian format, dan penyusunan yang ATS-friendly.
+Pembuatan CV dari awal hingga selesai agar menampilkan versi terbaik diri klien: penulisan konten, perapian format. Tersedia paket **ATS-friendly** (PDF & Word) dan **kreatif** (PDF saja), dalam Bahasa Indonesia atau Bahasa Inggris.
 
 ### C2. Apakah menerima CV fresh graduate / career switcher / profesional?
 **Jawaban:**  
@@ -85,7 +85,9 @@ Ya. Kami menerima berbagai kebutuhan CV/Resume (fresh graduate, pindah karier, m
 
 ### C3. Format file hasil CV?
 **Jawaban:**  
-PDF dan Word (keduanya tersedia).
+Tergantung paket:  
+- **ATS-friendly:** PDF dan Word  
+- **Kreatif:** PDF saja  
 
 ### C4. Berapa lama pengerjaan CV biasanya?
 **Jawaban:**  
@@ -101,7 +103,12 @@ Riwayat pendidikan, riwayat kerja (jika ada), skill, pengalaman/sertifikasi, kon
 
 ### C7. Harga CV?
 **Jawaban:**  
-Rp 50.000 per CV.
+- CV ATS-friendly, Bahasa Indonesia, PDF & Word: Rp 50.000  
+- CV kreatif, Bahasa Indonesia, PDF saja: Rp 26.000  
+- CV kreatif, Bahasa Inggris, PDF saja: Rp 40.000  
+- CV ATS-friendly, Bahasa Inggris, PDF & Word: Rp 70.000  
+
+Penawaran final via WhatsApp.
 
 ---
 
@@ -129,7 +136,7 @@ Membantu proposal, bab, analisis data, dan review.
 
 ### D5. Berapa lama / berapa sesi biasanya?
 **Jawaban:**  
-Sekitar 1 minggu sampai 1 bulan, tergantung paket dan tingkat kesulitan.
+Skripsi paket/bab: sekitar **7–14 hari**, tergantung kesulitan dan antrian. Tugas akademik: sekitar 1 minggu sampai 1 bulan.
 
 ### D6. Berapa kali revisi / follow-up termasuk?
 **Jawaban:**  
@@ -140,29 +147,37 @@ Mengikuti paket. Di daftar harga, **revisi skripsi = Rp 50.000** (per permintaan
 Materi skripsi yang sudah ada (draft, outline, brief dosen, data, template kampus, jika ada).
 
 ### D8. Harga konsultasi skripsi?
-**Jawaban (dari Harga Jasa Skripsi.jpeg — mohon verifikasi):**  
+**Jawaban:**  
 
-**Skripsi & terkait:**
-- Bab I: Rp 200.000  
-- Bab II: Rp 400.000  
-- Bab III: Rp 200.000  
-- Bab IV: Rp 650.000  
-- Bab V: Rp 650.000  
+**Per bab:**
+- Bab I (Pendahuluan): Rp 200.000  
+- Bab I Bahasa Inggris: Rp 220.000  
+- Bab II (Tinjauan Pustaka): Rp 400.000  
+- Bab II Bahasa Inggris: Rp 420.000  
+- Bab III (Metodologi): Rp 200.000  
+- Bab III Bahasa Inggris: Rp 220.000  
+- Bab IV (Hasil & Pembahasan): Rp 650.000  
+- Bab IV Bahasa Inggris: Rp 800.000  
+- Bab V (Kesimpulan & Saran): Rp 650.000  
+- Bab V Bahasa Inggris: Rp 220.000  
 - Revisi: Rp 50.000  
 - Lampiran: Rp 50.000  
 - Daftar isi / tabel / gambar / pustaka / nomor halaman: Rp 25.000 per item  
 
 **Paket:**
-- Paket Sempro: Rp 750.000  
-- Paket Semhas: Rp 2.000.000  
-- Paket Full: Rp 2.500.000  
+- Paket Sempro (Bab I–III): Rp 750.000  
+- Paket Semhas (Bab I–V): Rp 2.000.000  
+- Paket Full (Bab I–V + lampiran + daftar): Rp 2.500.000  
 
-**Lainnya (jika Twin ditanya; opsional):**
+**Tugas akademik:**
 - Jasa ketik Word: Rp 10.000–25.000  
 - Makalah: Rp 10.000–25.000  
-- PPT: Rp 25.000–50.000  
+- Esai: Rp 50.000  
+- PPT / Presentasi: Rp 25.000–50.000  
 - Tugas sekolah: Rp 15.000–50.000  
 - Tugas kuliah: Rp 50.000–200.000  
+- Artikel (ilmiah): Rp 150.000  
+- Artikel (syarat lulus): Rp 400.000  
 
 Harga dapat menyesuaikan deadline & tingkat kesulitan. Penawaran final via WhatsApp.
 
@@ -204,7 +219,7 @@ Menyesuaikan kebutuhan klien (umumnya PNG, PDF, atau PSD).
 2. Properti desain: format, warna, teks, background, ukuran media
 
 ### E7. Harga design visual?
-**Jawaban (dari Harga Desain Visual.jpeg — mohon verifikasi):**  
+**Jawaban:**  
 
 **Desain custom:**
 - Poster: Rp 25.000–80.000  

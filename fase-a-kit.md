@@ -68,7 +68,7 @@ designtuntas.vercel.app
 Proses kami: chat → brief → revisi → tuntas.
 Tidak ada refund (sepakat di awal). DP 50%.
 
-Mulai dari CV Rp 50.000.
+Mulai dari CV Rp 26.000.
 Link di bio.
 ```
 
