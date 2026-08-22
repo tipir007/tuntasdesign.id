@@ -152,6 +152,12 @@ export const PORTFOLIO_ITEMS = [
     image: "/portfolio/3d/portfolio-3d-dudukan-pisau-anon.png"
   },
   {
+    title: "Gambar Teknik — Gunting Kuku",
+    category: "3D",
+    note: "Drawing assembly gunting kuku (gambar teknik)",
+    image: "/portfolio/3d/portfolio-3d-gunting-kuku.jpg"
+  },
+  {
     title: "Model 3D — Kapal Nelayan",
     category: "3D",
     note: "Scene Blender, render still frame",

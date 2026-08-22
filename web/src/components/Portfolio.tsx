@@ -8,19 +8,24 @@ export default function Portfolio() {
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-teal">Portofolio</p>
         <h2 className="mt-3 font-display text-3xl text-ink md:text-5xl">Cuplikan karya.</h2>
         <p className="mt-4 max-w-xl text-ink/70">
-          Sample starter — versi anonim siap unduh. CV tersedia PDF; karya 3D tersedia PNG
-          (gambar teknik, model, animasi).
+          Sample starter — versi anonim siap unduh. CV tersedia PDF; karya 3D tersedia
+          gambar teknik, model, dan animasi.
         </p>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {PORTFOLIO_ITEMS.map((item) => {
-            const isPng = item.image.endsWith(".png");
+            const isRaster = /\.(png|jpe?g)$/i.test(item.image);
             const downloadHref =
               "pdf" in item && item.pdf
                 ? item.pdf
-                : isPng
+                : item.category === "3D" && isRaster
                   ? item.image
                   : null;
-            const downloadLabel = downloadHref?.endsWith(".pdf") ? "PDF" : "PNG";
+            const downloadLabel = downloadHref?.endsWith(".pdf")
+              ? "PDF"
+              : downloadHref?.match(/\.jpe?g$/i)
+                ? "JPG"
+                : "PNG";
+            const isTeknik = item.title.startsWith("Gambar Teknik");
 
             return (
             <figure key={item.title} className="group">
@@ -29,12 +34,10 @@ export default function Portfolio() {
                   src={item.image}
                   alt={`${item.category}: ${item.title}`}
                   fill
-                  unoptimized={isPng}
+                  unoptimized={isRaster}
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   className={`object-cover transition duration-500 group-hover:scale-[1.03] ${
-                    item.title.includes("Food Crusher") || item.title.includes("Dudukan Pisau")
-                      ? "object-[60%_20%]"
-                      : "object-top"
+                    isTeknik ? "object-[60%_20%]" : "object-top"
                   }`}
                 />
                 {downloadHref ? (
@@ -43,7 +46,7 @@ export default function Portfolio() {
                       href={downloadHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      download={downloadHref.endsWith(".png")}
+                      download={!downloadHref.endsWith(".pdf")}
                       className="block w-full rounded bg-teal px-3 py-2 text-center text-xs font-medium text-white transition hover:bg-teal/90"
                     >
                       Lihat &amp; Unduh {downloadLabel}
