@@ -140,6 +140,12 @@ export const PORTFOLIO_ITEMS = [
     image: "/portfolio/portfolio-feed-ig.jpg"
   },
   {
+    title: "Gambar Teknik — Gunting Kuku",
+    category: "3D",
+    note: "Drawing assembly gunting kuku (gambar teknik)",
+    image: "/portfolio/3d/portfolio-3d-gunting-kuku.jpg"
+  },
+  {
     title: "Gambar Teknik — Food Crusher",
     category: "3D",
     note: "Drawing assembly mesin food crusher (SolidWorks)",
@@ -150,12 +156,6 @@ export const PORTFOLIO_ITEMS = [
     category: "3D",
     note: "Detail part dudukan pisau cutmix (SolidWorks)",
     image: "/portfolio/3d/portfolio-3d-dudukan-pisau-anon.png"
-  },
-  {
-    title: "Gambar Teknik — Gunting Kuku",
-    category: "3D",
-    note: "Drawing assembly gunting kuku (gambar teknik)",
-    image: "/portfolio/3d/portfolio-3d-gunting-kuku.jpg"
   },
   {
     title: "Model 3D — Kapal Nelayan",
