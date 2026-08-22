@@ -1,10 +1,6 @@
 # Review Daftar Harga — designtuntas.id
 
-Edit file ini sesuai kebutuhan. Setelah fix, bilang "lanjut implement" dan harga ini akan masuk ke website.
-
-Cara nambah baris tabel (wajib persis seperti ini, termasuk `|` kiri dan kanan):
-
-`| Nama item | Rp 00.000 |`
+Edit file ini sesuai kebutuhan. Harga di file ini **sudah diimplementasikan** ke website (`#harga`), Tuti AI, dan FAQ.
 
 ---
 
@@ -12,16 +8,17 @@ Cara nambah baris tabel (wajib persis seperti ini, termasuk `|` kiri dan kanan):
 
 | Item | Harga |
 |---|---|
-| CV ATS-friendly, Bahasa Indonesia, PDF & Word | Rp 50.000 |
-| CV kreatif, Bahasa Indonesia, PDF saja | Rp 26.000 |
-| CV kreatif, Bahasa Inggris, PDF saja | Rp 40.000 |
-| CV ATS-friendly, Bahasa Inggris, PDF & Word | Rp 70.000 |
+| CV (dari nol sampai jadi, ATS-friendly, PDF & Word) | Rp 50.000 |
+| CV (dari nol sampai jadi, Kreatif, Bahasa Indonesia, PDF saja) | Rp 26.000 |
+| CV (dari nol sampai jadi, ATS-friendly, Bahasa Indonesia, PDF & Word) | Rp 70.000 |
+| CV (dari nol sampai jadi, Kreatif, Bahasa Inggris, PDF saja) | Rp 40.000 |
+| CV (dari nol sampai jadi, ATS-friendly, Bahasa Inggris, PDF & Word) | Rp 70.000 |
 
 **Durasi:** 1–3 hari (paling cepat 1×24 jam)
 
 ---
 
-## 2. Skripsi & Tugas Akademik
+## 2. Skripsi
 
 ### Per Bab
 
@@ -51,18 +48,22 @@ Cara nambah baris tabel (wajib persis seperti ini, termasuk `|` kiri dan kanan):
 | Paket Semhas (Bab I–V) | Rp 2.000.000 |
 | Paket Full (Bab I–V + lampiran + daftar) | Rp 2.500.000 |
 
-### Lainnya
+**Durasi:** 7–14 hari (tergantung kesulitan skripsi dan antrian pengerjaan)
+
+### Tugas Akademik
 
 | Item | Harga |
 |---|---|
+| Esai | Rp 50.000 |
+| Artikel (ilmiah) | Rp 150.000 |
+| Artikel (syarat lulus) | Rp 400.000 |
+| Makalah | Rp 50.000 |
+| Resume | Rp 50.000 |
 | Jasa ketik Word | Rp 10.000–25.000 |
 | Makalah | Rp 10.000–25.000 |
 | PPT / Presentasi | Rp 25.000–50.000 |
 | Tugas sekolah | Rp 15.000–50.000 |
 | Tugas kuliah | Rp 50.000–200.000 |
-| Esai | Rp 50.000 |
-| Artikel (ilmiah) | Rp 150.000 |
-| Artikel (syarat lulus) | Rp 400.000 |
 
 **Durasi:** 1 minggu – 1 bulan  
 **Fokus:** S1 Teknik (jurusan lain konfirmasi via WA)  
@@ -131,12 +132,12 @@ Cara nambah baris tabel (wajib persis seperti ini, termasuk `|` kiri dan kanan):
 
 ## Checklist Review
 
-- [ ] Harga CV sudah benar
-- [ ] Harga Skripsi per bab sudah benar
-- [ ] Harga Paket Skripsi sudah benar
-- [ ] Harga Visual sudah benar
-- [ ] Harga Logo sudah benar
-- [ ] Harga 3D sudah benar
-- [ ] Ada item yang mau ditambah/hapus/ubah
-- [ ] Kebijakan umum sudah benar
-- [ ] Siap implement ke website
+- [x] Harga CV sudah benar
+- [x] Harga Skripsi per bab sudah benar
+- [x] Harga Paket Skripsi sudah benar
+- [x] Harga Visual sudah benar
+- [x] Harga Logo sudah benar
+- [x] Harga 3D sudah benar
+- [x] Ada item yang mau ditambah/hapus/ubah
+- [x] Kebijakan umum sudah benar
+- [x] Siap implement ke website
