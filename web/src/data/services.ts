@@ -143,7 +143,7 @@ export const PORTFOLIO_ITEMS = [
     title: "Gambar Teknik — Gunting Kuku",
     category: "3D",
     note: "Drawing assembly gunting kuku (gambar teknik)",
-    image: "/portfolio/3d/portfolio-3d-gunting-kuku.jpg"
+    image: "/portfolio/3d/portfolio-3d-gunting-kuku.png"
   },
   {
     title: "Gambar Teknik — Food Crusher",
