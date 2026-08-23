@@ -140,6 +140,12 @@ export const PORTFOLIO_ITEMS = [
     image: "/portfolio/portfolio-feed-ig.jpg"
   },
   {
+    title: "Kemasan Brownies Atep Coy",
+    category: "Visual",
+    note: "Pouch depan-belakang, sample visual",
+    image: "/portfolio/portfolio-visual-brownies-atep-coy.jpg"
+  },
+  {
     title: "Gambar Teknik — Gunting Kuku",
     category: "3D",
     note: "Drawing assembly gunting kuku (gambar teknik)",
