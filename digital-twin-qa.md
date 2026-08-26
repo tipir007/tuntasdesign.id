@@ -285,7 +285,7 @@ File Blender, serta format SolidWorks (`.sldprt`, `.sldasm`, `.slddrw`). Format 
 
 ### F8. Harga design 3D?
 **Jawaban:**  
-- Domestik (gambar teknik, animasi, karakter, interior): sekitar Rp 150.000–300.000  
+- Domestik (gambar teknik, animasi, karakter, interior): sekitar Rp 150.000–500.000  
 - Internasional (gambar teknik, animasi, karakter, interior): sekitar USD 20–50  
 
 Harga final tergantung kompleksitas; konfirmasi via WhatsApp.

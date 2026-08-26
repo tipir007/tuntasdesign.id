@@ -62,7 +62,7 @@ export const SERVICES = [
     summary:
       "Gambar teknik, animasi 3D, karakter, dan interior dengan SolidWorks & Blender.",
     duration: "4–30 hari tergantung jenis",
-    priceFrom: "Rp 150.000–300.000",
+    priceFrom: "Rp 150.000–500.000",
     highlights: [
       "Engineering & non-engineering",
       "Format Blender / SolidWorks",

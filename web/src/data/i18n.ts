@@ -220,7 +220,7 @@ const pricingId: PriceGroup[] = [
         rows: [
           {
             item: "Domestik (gambar teknik, animasi, karakter, interior)",
-            price: "Rp 150.000–300.000"
+            price: "Rp 150.000–500.000"
           },
           {
             item: "Internasional (gambar teknik, animasi, karakter, interior)",
@@ -349,7 +349,7 @@ const pricingEn: PriceGroup[] = [
         rows: [
           {
             item: "Domestic (technical drawing, animation, character, interior)",
-            price: "Rp 150.000–300.000"
+            price: "Rp 150.000–500.000"
           },
           {
             item: "International (technical drawing, animation, character, interior)",
@@ -424,7 +424,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           title: "Design 3D",
           summary: "Gambar teknik, animasi 3D, karakter, dan interior dengan SolidWorks & Blender.",
           duration: "4–30 hari tergantung jenis",
-          priceFrom: "Rp 150.000–300.000",
+          priceFrom: "Rp 150.000–500.000",
           highlights: [
             "Engineering & non-engineering",
             "Format Blender / SolidWorks",
@@ -642,7 +642,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           title: "3D Design",
           summary: "Technical drawings, 3D animation, characters, and interiors with SolidWorks & Blender.",
           duration: "4–30 days depending on type",
-          priceFrom: "Rp 150.000–300.000",
+          priceFrom: "Rp 150.000–500.000",
           highlights: [
             "Engineering & non-engineering",
             "Blender / SolidWorks formats",

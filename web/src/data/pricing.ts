@@ -134,7 +134,7 @@ export const PRICE_GROUPS: PriceGroup[] = [
         rows: [
           {
             item: "Domestik (gambar teknik, animasi, karakter, interior)",
-            price: "Rp 150.000–300.000"
+            price: "Rp 150.000–500.000"
           },
           {
             item: "Internasional (gambar teknik, animasi, karakter, interior)",

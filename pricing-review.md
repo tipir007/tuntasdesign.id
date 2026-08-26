@@ -111,7 +111,7 @@ Edit file ini sesuai kebutuhan. Harga di file ini **sudah diimplementasikan** ke
 
 | Item | Harga |
 |---|---|
-| Domestik (gambar teknik, animasi, karakter, interior) | Rp 150.000–300.000 |
+| Domestik (gambar teknik, animasi, karakter, interior) | Rp 150.000–500.000 |
 | Internasional (gambar teknik, animasi, karakter, interior) | USD 20–50 |
 
 **Durasi:** Gambar teknik 4–7 hari, Animasi/karakter 14–30 hari, Interior 7–21 hari  
