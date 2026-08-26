@@ -22,7 +22,9 @@ export default function Navbar() {
     { href: "#harga", label: t.nav.pricing },
     { href: "#cara-kerja", label: t.nav.howItWorks },
     { href: "#tuti", label: t.nav.tuti },
-    { href: "#portofolio", label: t.nav.portfolio }
+    { href: "#portofolio", label: t.nav.portfolio },
+    { href: "/order", label: locale === "en" ? "Order" : "Order" },
+    { href: "/lacak", label: locale === "en" ? "Track" : "Lacak" }
   ];
 
   const switchLocale = (next: Locale) => {
