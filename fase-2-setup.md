@@ -5,8 +5,11 @@ Ikuti langkah ini sekali agar form order, lacak status, dan admin aktif di Verce
 ## 1. Buat project Supabase (free)
 
 1. Buka https://supabase.com → New project
-2. Simpan **Project URL** dan **service_role** key (Settings → API)
-3. Di SQL Editor, jalankan:
+2. Simpan **Project URL**
+3. Key server (salah satu):
+   - **service_role** (paling aman, recommended), atau
+   - **publishable / anon** (boleh untuk soft launch; jangan di-commit ke git publik sebagai `NEXT_PUBLIC_`)
+4. Di SQL Editor, jalankan **seluruh** script di bawah:
 
 ```sql
 create table if not exists public.orders (
@@ -26,8 +29,29 @@ create table if not exists public.orders (
 create index if not exists orders_code_idx on public.orders (code);
 create index if not exists orders_created_at_idx on public.orders (created_at desc);
 
--- Server memakai service_role; kunci RLS ketat untuk anon
 alter table public.orders enable row level security;
+
+-- Soft launch: izinkan akses via anon/publishable key dari server Next.js saja
+-- (key tidak di-expose ke browser). Nanti bisa diperketat + ganti service_role.
+drop policy if exists orders_anon_insert on public.orders;
+drop policy if exists orders_anon_select on public.orders;
+drop policy if exists orders_anon_update on public.orders;
+
+create policy orders_anon_insert on public.orders
+  for insert to anon, authenticated
+  with check (true);
+
+create policy orders_anon_select on public.orders
+  for select to anon, authenticated
+  using (true);
+
+create policy orders_anon_update on public.orders
+  for update to anon, authenticated
+  using (true)
+  with check (true);
+
+grant usage on schema public to anon, authenticated;
+grant select, insert, update on public.orders to anon, authenticated;
 ```
 
 ## 2. (Disarankan) Resend untuk email order baru
@@ -40,8 +64,8 @@ alter table public.orders enable row level security;
 Tambahkan ke `web/.env.local` dan Vercel → Project → Settings → Environment Variables:
 
 ```
-SUPABASE_URL=
-SUPABASE_SERVICE_ROLE_KEY=
+SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+SUPABASE_ANON_KEY=sb_publishable_...   # atau SUPABASE_SERVICE_ROLE_KEY=...
 ADMIN_SECRET=ganti-dengan-string-rahasia-panjang
 ADMIN_EMAIL=christopherhamonangan007@gmail.com
 RESEND_API_KEY=
@@ -49,6 +73,8 @@ RESEND_FROM=designtuntas <onboarding@resend.dev>
 ```
 
 `ADMIN_SECRET` dipakai untuk membuka `/admin/orders?secret=...`
+
+Setelah mengubah env di Vercel: **Redeploy** Production.
 
 ## 4. Uji
 

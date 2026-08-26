@@ -1,13 +1,17 @@
 type SupabaseConfig = {
   url: string;
-  serviceRoleKey: string;
+  apiKey: string;
 };
 
+/** Prefers service_role; falls back to anon/publishable (server-only). */
 export function getSupabaseConfig(): SupabaseConfig | null {
   const url = process.env.SUPABASE_URL?.trim();
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
-  if (!url || !serviceRoleKey) return null;
-  return { url, serviceRoleKey };
+  const apiKey =
+    process.env.SUPABASE_SERVICE_ROLE_KEY?.trim() ||
+    process.env.SUPABASE_ANON_KEY?.trim() ||
+    process.env.SUPABASE_PUBLISHABLE_KEY?.trim();
+  if (!url || !apiKey) return null;
+  return { url, apiKey };
 }
 
 export async function supabaseRest<T>(
@@ -20,8 +24,8 @@ export async function supabaseRest<T>(
   }
 
   const headers = new Headers(init.headers);
-  headers.set("apikey", config.serviceRoleKey);
-  headers.set("Authorization", `Bearer ${config.serviceRoleKey}`);
+  headers.set("apikey", config.apiKey);
+  headers.set("Authorization", `Bearer ${config.apiKey}`);
   headers.set("Content-Type", "application/json");
   if (init.prefer) {
     headers.set("Prefer", init.prefer);
