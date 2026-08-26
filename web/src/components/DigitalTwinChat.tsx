@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { BRAND, STARTER_PROMPTS } from "@/data/services";
+import { useLocale } from "@/components/LocaleProvider";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 type Message = {
@@ -12,17 +12,25 @@ type Message = {
 };
 
 export default function DigitalTwinChat() {
+  const { locale, t } = useLocale();
   const [messages, setMessages] = useState<Message[]>([
-    {
-      id: "welcome",
-      role: "assistant",
-      content: `Halo, saya ${BRAND.assistantName}, asisten AI ${BRAND.name}. Saya bisa bantu jelaskan layanan Resume CV, Konsultasi Skripsi, Design Visual, dan Design 3D. Mau mulai dari yang mana?`
-    }
+    { id: "welcome", role: "assistant", content: t.tuti.welcome }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const messagesRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    setMessages((prev) => {
+      if (prev.length === 1 && prev[0]?.id === "welcome") {
+        return [{ id: "welcome", role: "assistant", content: t.tuti.welcome }];
+      }
+      return prev.map((msg) =>
+        msg.id === "welcome" ? { ...msg, content: t.tuti.welcome } : msg
+      );
+    });
+  }, [locale, t.tuti.welcome]);
 
   useEffect(() => {
     const el = messagesRef.current;
@@ -56,10 +64,10 @@ export default function DigitalTwinChat() {
       if (!response.ok || !payload.answer) {
         const fallback =
           response.status === 429
-            ? "Terlalu banyak permintaan. Tunggu sebentar lalu coba lagi."
+            ? t.tuti.errRateLimit
             : response.status === 502
-              ? "Asisten sedang tidak tersedia. Coba lagi atau hubungi WhatsApp."
-              : "Tidak bisa menghasilkan jawaban.";
+              ? t.tuti.errUnavailable
+              : t.tuti.errGeneric;
         throw new Error(payload.error || fallback);
       }
 
@@ -68,7 +76,7 @@ export default function DigitalTwinChat() {
         { id: crypto.randomUUID(), role: "assistant", content: payload.answer ?? "" }
       ]);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Terjadi kesalahan.");
+      setError(err instanceof Error ? err.message : t.tuti.errGeneric);
     } finally {
       setIsLoading(false);
     }
@@ -83,19 +91,16 @@ export default function DigitalTwinChat() {
     <section id="tuti" className="bg-sand px-5 py-20 md:px-8 md:py-28">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.4fr]">
         <div>
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-teal">Tuti AI</p>
-          <h2 className="mt-3 font-display text-3xl text-ink md:text-5xl">Tanya dulu, order belakangan.</h2>
-          <p className="mt-4 text-ink/70">
-            {BRAND.assistantName} menjawab seputar layanan, durasi, dan kisaran harga. Untuk brief
-            panjang atau order, lanjut ke WhatsApp.
-          </p>
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-teal">{t.tuti.eyebrow}</p>
+          <h2 className="mt-3 font-display text-3xl text-ink md:text-5xl">{t.tuti.title}</h2>
+          <p className="mt-4 text-ink/70">{t.tuti.intro}</p>
           <a
-            href={whatsappUrl("Halo, saya sudah chat dengan Tuti dan ingin lanjut order.")}
+            href={whatsappUrl(t.tuti.waMessage)}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 inline-flex rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition hover:bg-teal"
           >
-            Lanjut via WhatsApp
+            {t.tuti.ctaWa}
           </a>
         </div>
 
@@ -141,7 +146,7 @@ export default function DigitalTwinChat() {
           </div>
 
           <div className="flex flex-wrap gap-2 border-t border-ink/8 px-4 py-3">
-            {STARTER_PROMPTS.slice(0, 4).map((prompt) => (
+            {t.tuti.starterPrompts.map((prompt) => (
               <button
                 key={prompt}
                 type="button"
@@ -158,7 +163,7 @@ export default function DigitalTwinChat() {
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Tulis pertanyaan…"
+              placeholder={t.tuti.placeholder}
               disabled={isLoading}
               className="min-w-0 flex-1 rounded-full border border-ink/15 bg-paper px-4 py-2.5 text-sm outline-none ring-teal focus:ring-2"
             />
@@ -167,7 +172,7 @@ export default function DigitalTwinChat() {
               disabled={isLoading || !input.trim()}
               className="rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-ink disabled:opacity-50"
             >
-              Kirim
+              {t.tuti.send}
             </button>
           </form>
           {error && <p className="px-4 pb-3 text-xs text-red-700">{error}</p>}

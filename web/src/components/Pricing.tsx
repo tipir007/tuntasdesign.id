@@ -1,28 +1,29 @@
 "use client";
 
-import { useState } from "react";
-import { BRAND } from "@/data/services";
-import { PRICE_GROUPS, PRICE_POLICIES } from "@/data/pricing";
+import { useEffect, useState } from "react";
+import { useLocale } from "@/components/LocaleProvider";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 export default function Pricing() {
-  const [activeId, setActiveId] = useState(PRICE_GROUPS[0].id);
-  const group = PRICE_GROUPS.find((item) => item.id === activeId) ?? PRICE_GROUPS[0];
+  const { locale, t } = useLocale();
+  const groups = t.pricing.groups;
+  const [activeId, setActiveId] = useState(groups[0].id);
+
+  useEffect(() => {
+    setActiveId(t.pricing.groups[0].id);
+  }, [locale]); // eslint-disable-line react-hooks/exhaustive-deps -- reset tab when language changes
+
+  const group = groups.find((item) => item.id === activeId) ?? groups[0];
 
   return (
     <section id="harga" className="bg-sand px-5 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-teal">Harga</p>
-        <h2 className="mt-3 max-w-2xl font-display text-3xl text-ink md:text-5xl">
-          Daftar harga, transparan.
-        </h2>
-        <p className="mt-4 max-w-2xl text-ink/70">
-          Kisaran resmi {BRAND.name}. Penawaran final menyesuaikan brief, deadline, dan tingkat
-          kesulitan — konfirmasi via WhatsApp.
-        </p>
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-teal">{t.pricing.eyebrow}</p>
+        <h2 className="mt-3 max-w-2xl font-display text-3xl text-ink md:text-5xl">{t.pricing.title}</h2>
+        <p className="mt-4 max-w-2xl text-ink/70">{t.pricing.intro}</p>
 
         <div className="mt-10 flex gap-2 overflow-x-auto pb-2">
-          {PRICE_GROUPS.map((item) => {
+          {groups.map((item) => {
             const active = item.id === activeId;
             return (
               <button
@@ -78,17 +79,17 @@ export default function Pricing() {
 
         <div className="mt-12 grid gap-8 border-t border-ink/15 pt-8 md:grid-cols-[1fr_auto] md:items-end">
           <ul className="space-y-1 text-sm text-ink/70">
-            {PRICE_POLICIES.map((policy) => (
+            {t.pricing.policies.map((policy) => (
               <li key={policy}>— {policy}</li>
             ))}
           </ul>
           <a
-            href={whatsappUrl("Halo DesignTuntas, saya ingin konfirmasi harga layanan.")}
+            href={whatsappUrl(t.pricing.waMessage)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper transition hover:bg-teal"
           >
-            Konfirmasi via WhatsApp
+            {t.pricing.cta}
           </a>
         </div>
       </div>

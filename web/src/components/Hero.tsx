@@ -1,7 +1,12 @@
+"use client";
+
 import { BRAND } from "@/data/services";
+import { useLocale } from "@/components/LocaleProvider";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 export default function Hero() {
+  const { t } = useLocale();
+
   return (
     <section id="beranda" className="relative min-h-[100svh] overflow-hidden">
       <div className="absolute inset-0 hero-canvas" aria-hidden />
@@ -12,26 +17,25 @@ export default function Hero() {
           {BRAND.name}
         </p>
         <h1 className="animate-fade-up delay-1 max-w-2xl text-2xl font-medium leading-snug text-paper/95 md:text-4xl">
-          Desain & dokumen, sampai tuntas.
+          {t.hero.headline}
         </h1>
         <p className="animate-fade-up delay-2 mt-4 max-w-xl text-base text-paper/80 md:text-lg">
-          {BRAND.tagline} Resume CV, bantuan skripsi, design visual, dan design 3D — satu pintu,
-          proses jelas.
+          {t.hero.support}
         </p>
         <div className="animate-fade-up delay-3 mt-8 flex flex-wrap gap-3">
           <a
-            href={whatsappUrl("Halo, saya ingin order layanan designtuntas.id.")}
+            href={whatsappUrl(t.hero.waMessage)}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-teal px-6 py-3 text-sm font-semibold text-ink transition hover:bg-teal-bright"
           >
-            Chat WhatsApp
+            {t.hero.ctaWa}
           </a>
           <a
             href="#tuti"
             className="rounded-full border border-paper/40 bg-paper/10 px-6 py-3 text-sm font-semibold text-paper backdrop-blur transition hover:bg-paper/20"
           >
-            Tanya Tuti AI
+            {t.hero.ctaTuti}
           </a>
         </div>
       </div>
