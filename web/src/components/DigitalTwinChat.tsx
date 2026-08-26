@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { BRAND, STARTER_PROMPTS } from "@/data/services";
 import { whatsappUrl } from "@/lib/whatsapp";
 
@@ -109,7 +110,25 @@ export default function DigitalTwinChat() {
                     : "ml-auto bg-ink text-paper"
                 }`}
               >
-                {message.content}
+                {message.role === "assistant" ? (
+                  <div className="space-y-2 [&_p]:m-0 [&_ul]:my-1 [&_ul]:list-disc [&_ul]:space-y-0.5 [&_ul]:pl-4 [&_ol]:my-1 [&_ol]:list-decimal [&_ol]:space-y-0.5 [&_ol]:pl-4 [&_strong]:font-semibold [&_em]:italic [&_a]:text-teal [&_a]:underline">
+                    <ReactMarkdown
+                      components={{
+                        h1: ({ children }) => <p className="font-semibold">{children}</p>,
+                        h2: ({ children }) => <p className="font-semibold">{children}</p>,
+                        h3: ({ children }) => <p className="font-semibold">{children}</p>,
+                        code: ({ children }) => (
+                          <span className="rounded bg-ink/5 px-1 font-mono text-[0.9em]">{children}</span>
+                        ),
+                        pre: ({ children }) => <div className="overflow-x-auto">{children}</div>
+                      }}
+                    >
+                      {message.content}
+                    </ReactMarkdown>
+                  </div>
+                ) : (
+                  message.content
+                )}
               </div>
             ))}
             {isLoading && (
