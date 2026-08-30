@@ -68,6 +68,62 @@ async function notifyAdmin(order: OrderRecord): Promise<void> {
   }
 }
 
+/** Free CallMeBot push to admin WhatsApp. Requires CALLMEBOT_APIKEY env. */
+async function notifyWhatsApp(order: OrderRecord): Promise<void> {
+  const apiKey = process.env.CALLMEBOT_APIKEY?.trim();
+  const phone = (
+    process.env.CALLMEBOT_PHONE?.trim() ||
+    process.env.NEXT_PUBLIC_WA_NUMBER?.trim() ||
+    "6288901178816"
+  ).replace(/[^\d]/g, "");
+
+  if (!apiKey) {
+    console.info("[orders] WhatsApp skipped (missing CALLMEBOT_APIKEY)", order.code);
+    return;
+  }
+
+  const site = (process.env.NEXT_PUBLIC_SITE_URL || "https://designtuntas.vercel.app").replace(
+    /\/$/,
+    ""
+  );
+  const briefPreview =
+    order.brief.length > 280 ? `${order.brief.slice(0, 277)}...` : order.brief;
+  const text = [
+    `*Order baru ${order.code}*`,
+    `Layanan: ${order.service}`,
+    `Nama: ${order.name}`,
+    `Kontak: ${order.contact}`,
+    `Deadline: ${order.deadline || "-"}`,
+    "",
+    "Brief:",
+    briefPreview,
+    "",
+    `Lacak: ${site}/lacak?kode=${order.code}`,
+    `Admin: ${site}/admin/orders`
+  ].join("\n");
+
+  try {
+    const url = new URL("https://api.callmebot.com/whatsapp.php");
+    url.searchParams.set("phone", phone);
+    url.searchParams.set("text", text);
+    url.searchParams.set("apikey", apiKey);
+
+    const response = await fetch(url.toString(), { method: "GET" });
+    if (!response.ok) {
+      console.error(
+        "[orders] WhatsApp notify failed:",
+        response.status,
+        await response.text().catch(() => "")
+      );
+    }
+  } catch (error) {
+    console.error(
+      "[orders] WhatsApp notify error:",
+      error instanceof Error ? error.message : "unknown"
+    );
+  }
+}
+
 export async function POST(request: Request) {
   try {
     if (!getSupabaseConfig()) {
@@ -142,6 +198,7 @@ export async function POST(request: Request) {
     }
 
     void notifyAdmin(created);
+    void notifyWhatsApp(created);
 
     return NextResponse.json({
       code: created.code,

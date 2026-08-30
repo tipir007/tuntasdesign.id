@@ -54,12 +54,26 @@ grant usage on schema public to anon, authenticated;
 grant select, insert, update on public.orders to anon, authenticated;
 ```
 
-## 2. (Disarankan) Resend untuk email order baru
+## 2. Notifikasi WhatsApp (CallMeBot — gratis)
+
+Supaya HP admin langsung dapat chat saat order masuk:
+
+1. Simpan nomor bot **+34 644 87 21 57** di kontak HP
+2. Kirim WhatsApp ke bot: `I allow callmebot to send me messages`
+3. Bot membalas berisi **APIKEY** (simpan)
+4. Isi env:
+   - `CALLMEBOT_PHONE=6288901178816`
+   - `CALLMEBOT_APIKEY=...` (dari bot)
+5. Redeploy Vercel
+
+Panduan resmi: https://www.callmebot.com/blog/free-api-whatsapp-messages/
+
+## 3. (Opsional) Resend untuk email order baru
 
 1. https://resend.com → API key
 2. Verifikasi domain pengirim, atau pakai `onboarding@resend.dev` untuk uji
 
-## 3. Env di lokal & Vercel
+## 4. Env di lokal & Vercel
 
 Tambahkan ke `web/.env.local` dan Vercel → Project → Settings → Environment Variables:
 
@@ -70,16 +84,20 @@ ADMIN_SECRET=ganti-dengan-string-rahasia-panjang
 ADMIN_EMAIL=christopherhamonangan007@gmail.com
 RESEND_API_KEY=
 RESEND_FROM=designtuntas <onboarding@resend.dev>
+CALLMEBOT_PHONE=6288901178816
+CALLMEBOT_APIKEY=
 ```
 
 `ADMIN_SECRET` dipakai untuk membuka `/admin/orders?secret=...`
 
 Setelah mengubah env di Vercel: **Redeploy** Production.
 
-## 4. Uji
+## 5. Uji
 
 - `/order` → submit form → dapat kode `DT-XXXX`
+- HP admin menerima WhatsApp (jika CallMeBot sudah diisi)
 - `/lacak?kode=DT-XXXX` → status `baru`
 - `/admin/orders?secret=...` → ubah status
 
 Tanpa env Supabase, API mengembalikan error konfigurasi (halaman tetap tampil).
+Tanpa `CALLMEBOT_APIKEY`, order tetap tersimpan; hanya notifikasi WA yang dilewati.
