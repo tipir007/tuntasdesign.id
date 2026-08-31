@@ -1,5 +1,7 @@
 # Fase A — Kit Soft Bisnis (siap salin)
 
+> **Mulai hari ini:** ikuti checklist singkat di [`fase-a-hari-ini.md`](fase-a-hari-ini.md) (~45 menit).
+
 Gunakan file ini untuk langkah yang harus dikerjakan di HP/akun (Instagram, WhatsApp, sebar link). Website sudah dipasangi 8 sample portofolio.
 
 **Live:** https://designtuntas.vercel.app  
