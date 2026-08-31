@@ -54,19 +54,27 @@ grant usage on schema public to anon, authenticated;
 grant select, insert, update on public.orders to anon, authenticated;
 ```
 
-## 2. Notifikasi WhatsApp (CallMeBot — gratis)
+## 2. Notifikasi order (CallMeBot — gratis)
 
-Supaya HP admin langsung dapat chat saat order masuk:
+### A. Telegram (disarankan — lebih andal)
 
-1. Simpan nomor bot **+34 644 87 21 57** di kontak HP
-2. Kirim WhatsApp ke bot: `I allow callmebot to send me messages`
-3. Bot membalas berisi **APIKEY** (simpan)
-4. Isi env:
-   - `CALLMEBOT_PHONE=6288901178816`
-   - `CALLMEBOT_APIKEY=...` (dari bot)
+1. Telegram → cari `@CallMeBot_txtbot` → kirim `/start`
+2. Pastikan Settings → **Username** terisi (contoh `@Chris_Panjaitan`)
+3. Kalau API masih “Permission denied”, buka: https://api2.callmebot.com/txt/login.php
+4. Env: `CALLMEBOT_TELEGRAM_USER=@Chris_Panjaitan`
 5. Redeploy Vercel
 
-Panduan resmi: https://www.callmebot.com/blog/free-api-whatsapp-messages/
+Panduan: https://www.callmebot.com/blog/telegram-text-messages/
+
+### B. WhatsApp (opsional — bot sering tidak balas)
+
+1. Simpan nomor bot **+34 694 29 84 96** di kontak HP (nomor resmi; yang lama `+34 644…` sering mati)
+2. Kirim: `I allow callmebot to send me messages`
+3. Tunggu **APIKEY** (~2 menit). Kalau kosong: `Recover APIKey` atau coba lagi setelah 24 jam
+4. Env: `CALLMEBOT_PHONE=6288901178816` + `CALLMEBOT_APIKEY=...`
+5. Redeploy Vercel
+
+Panduan: https://www.callmebot.com/blog/free-api-whatsapp-messages/
 
 ## 3. (Opsional) Resend untuk email order baru
 
@@ -86,6 +94,7 @@ RESEND_API_KEY=
 RESEND_FROM=designtuntas <onboarding@resend.dev>
 CALLMEBOT_PHONE=6288901178816
 CALLMEBOT_APIKEY=
+CALLMEBOT_TELEGRAM_USER=@Chris_Panjaitan
 ```
 
 `ADMIN_SECRET` dipakai untuk membuka `/admin/orders?secret=...`

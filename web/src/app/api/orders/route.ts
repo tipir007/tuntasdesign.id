@@ -68,6 +68,28 @@ async function notifyAdmin(order: OrderRecord): Promise<void> {
   }
 }
 
+function buildOrderNotifyText(order: OrderRecord): string {
+  const site = (process.env.NEXT_PUBLIC_SITE_URL || "https://designtuntas.vercel.app").replace(
+    /\/$/,
+    ""
+  );
+  const briefPreview =
+    order.brief.length > 280 ? `${order.brief.slice(0, 277)}...` : order.brief;
+  return [
+    `*Order baru ${order.code}*`,
+    `Layanan: ${order.service}`,
+    `Nama: ${order.name}`,
+    `Kontak: ${order.contact}`,
+    `Deadline: ${order.deadline || "-"}`,
+    "",
+    "Brief:",
+    briefPreview,
+    "",
+    `Lacak: ${site}/lacak?kode=${order.code}`,
+    `Admin: ${site}/admin/orders`
+  ].join("\n");
+}
+
 /** Free CallMeBot push to admin WhatsApp. Requires CALLMEBOT_APIKEY env. */
 async function notifyWhatsApp(order: OrderRecord): Promise<void> {
   const apiKey = process.env.CALLMEBOT_APIKEY?.trim();
@@ -82,25 +104,7 @@ async function notifyWhatsApp(order: OrderRecord): Promise<void> {
     return;
   }
 
-  const site = (process.env.NEXT_PUBLIC_SITE_URL || "https://designtuntas.vercel.app").replace(
-    /\/$/,
-    ""
-  );
-  const briefPreview =
-    order.brief.length > 280 ? `${order.brief.slice(0, 277)}...` : order.brief;
-  const text = [
-    `*Order baru ${order.code}*`,
-    `Layanan: ${order.service}`,
-    `Nama: ${order.name}`,
-    `Kontak: ${order.contact}`,
-    `Deadline: ${order.deadline || "-"}`,
-    "",
-    "Brief:",
-    briefPreview,
-    "",
-    `Lacak: ${site}/lacak?kode=${order.code}`,
-    `Admin: ${site}/admin/orders`
-  ].join("\n");
+  const text = buildOrderNotifyText(order);
 
   try {
     const url = new URL("https://api.callmebot.com/whatsapp.php");
@@ -119,6 +123,36 @@ async function notifyWhatsApp(order: OrderRecord): Promise<void> {
   } catch (error) {
     console.error(
       "[orders] WhatsApp notify error:",
+      error instanceof Error ? error.message : "unknown"
+    );
+  }
+}
+
+/** Free CallMeBot push to admin Telegram. Requires CALLMEBOT_TELEGRAM_USER (@username). */
+async function notifyTelegram(order: OrderRecord): Promise<void> {
+  const raw = process.env.CALLMEBOT_TELEGRAM_USER?.trim();
+  if (!raw) {
+    console.info("[orders] Telegram skipped (missing CALLMEBOT_TELEGRAM_USER)", order.code);
+    return;
+  }
+  const user = raw.startsWith("@") ? raw : `@${raw}`;
+  const text = buildOrderNotifyText(order);
+
+  try {
+    const url = new URL("https://api.callmebot.com/text.php");
+    url.searchParams.set("user", user);
+    url.searchParams.set("text", text);
+    url.searchParams.set("html", "no");
+    url.searchParams.set("links", "no");
+
+    const response = await fetch(url.toString(), { method: "GET" });
+    const body = await response.text().catch(() => "");
+    if (!response.ok || /Error:|Permission denied/i.test(body)) {
+      console.error("[orders] Telegram notify failed:", response.status, body.slice(0, 400));
+    }
+  } catch (error) {
+    console.error(
+      "[orders] Telegram notify error:",
       error instanceof Error ? error.message : "unknown"
     );
   }
@@ -199,6 +233,7 @@ export async function POST(request: Request) {
 
     void notifyAdmin(created);
     void notifyWhatsApp(created);
+    void notifyTelegram(created);
 
     return NextResponse.json({
       code: created.code,
