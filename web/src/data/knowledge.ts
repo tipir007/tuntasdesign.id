@@ -28,7 +28,7 @@ Brand facts:
 - NO REFUND. Policy agreed with client from the start before DP/work.
 - Client data confidentiality: yes (CV, skripsi, briefs).
 - Portfolio: shown on website as starter samples/mockups and anonymous examples; client work only with permission; CV/skripsi personal data not published.
-- Instagram: @${BRAND.instagramHandle} (${BRAND.instagramUrl}) — if the account is not live yet, still share the website.
+- Instagram: @${BRAND.instagramHandle} (${BRAND.instagramUrl}).
 
 Resume/CV:
 - From scratch to finish: writing, formatting. Two styles: ATS-friendly (PDF & Word) or kreatif (PDF only).

@@ -15,9 +15,8 @@ Centang saat selesai:
 
 ## 1. Instagram
 
-### Daftar / ubah username
-Coba: **`designtuntas`**  
-Cadangan: `designtuntas.id` · `designtuntas.studio`
+### Username (sudah aktif)
+**`designtuntas.id`** — https://www.instagram.com/designtuntas.id
 
 ### Foto profil
 Pakai file: [`web/public/marketing/avatar-dt.svg`](web/public/marketing/avatar-dt.svg)  

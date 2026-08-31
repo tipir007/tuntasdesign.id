@@ -6,7 +6,7 @@ Gunakan file ini untuk langkah yang harus dikerjakan di HP/akun (Instagram, What
 
 **Live:** https://designtuntas.vercel.app  
 **WA:** 088901178816  
-**Handle IG yang diincar:** `@designtuntas`
+**Handle IG:** `@designtuntas.id` — https://www.instagram.com/designtuntas.id
 
 ---
 
@@ -31,9 +31,8 @@ Ini **mockup/sample**, bukan file klien. Nanti ganti dengan karya asli + izin.
 
 ## 2. Instagram — salin & pasang hari ini
 
-### Username
-Coba daftar/ubah ke: **`designtuntas`**  
-Cadangan: `designtuntas.id` · `designtuntas.studio`
+### Username (sudah aktif)
+**`designtuntas.id`** — https://www.instagram.com/designtuntas.id
 
 ### Nama profil
 `designtuntas.id`

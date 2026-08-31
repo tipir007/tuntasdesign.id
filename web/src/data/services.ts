@@ -12,8 +12,8 @@ export const BRAND = {
   hours: "08.00–22.00 WIB",
   responseEta: "sekitar 15 menit pada jam operasional",
   location: "Berbasis Bogor, layanan online se-Indonesia",
-  instagramHandle: "designtuntas",
-  instagramUrl: "https://instagram.com/designtuntas"
+  instagramHandle: "designtuntas.id",
+  instagramUrl: "https://www.instagram.com/designtuntas.id"
 } as const;
 
 export const SERVICES = [
