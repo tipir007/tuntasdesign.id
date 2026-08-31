@@ -18,9 +18,9 @@ Centang saat selesai:
 ### Username (sudah aktif)
 **`designtuntas.id`** — https://www.instagram.com/designtuntas.id
 
-### Foto profil
-Pakai file: [`web/public/marketing/avatar-dt.svg`](web/public/marketing/avatar-dt.svg)  
-(Buka di browser → screenshot 512×512, atau export ke PNG.)
+### Foto profil (IG & WhatsApp)
+Pakai logo resmi: https://designtuntas.vercel.app/marketing/logo-designtuntas.png  
+(Download → crop bulat untuk foto profil.)
 
 ### Nama profil
 ```

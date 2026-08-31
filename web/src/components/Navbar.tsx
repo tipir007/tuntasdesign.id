@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { BRAND } from "@/data/services";
 import { useLocale } from "@/components/LocaleProvider";
@@ -46,8 +47,16 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-4 md:px-8">
-        <a href="/#beranda" className="font-display text-xl tracking-tight text-ink md:text-2xl">
-          {BRAND.name}
+        <a href="/#beranda" className="flex items-center gap-2.5">
+          <Image
+            src={BRAND.logo}
+            alt={BRAND.logoAlt}
+            width={40}
+            height={40}
+            className="h-9 w-9 rounded-lg object-cover object-center"
+            priority
+          />
+          <span className="font-display text-xl tracking-tight text-ink md:text-2xl">{BRAND.name}</span>
         </a>
         <nav className="hidden items-center gap-5 text-sm text-ink/75 lg:flex">
           {links.map((link) => (

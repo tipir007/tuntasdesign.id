@@ -50,7 +50,7 @@ designtuntas.vercel.app
 https://designtuntas.vercel.app
 
 ### Foto profil
-Pakai inisial DT di latar tinta teal `#0c1f24` + aksen `#1a9b8e`, atau cuplikan satu karya.
+Logo resmi: https://designtuntas.vercel.app/marketing/logo-designtuntas.png
 
 ### Highlight (nama)
 Layanan · CV · Skripsi · Visual · 3D · Cara order

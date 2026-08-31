@@ -46,7 +46,11 @@ export const metadata: Metadata = {
     title: "designtuntas.id",
     description: "Desain & dokumen, sampai tuntas."
   },
-  robots: { index: true, follow: true }
+  robots: { index: true, follow: true },
+  icons: {
+    icon: "/marketing/logo-designtuntas.png",
+    apple: "/marketing/logo-designtuntas.png"
+  }
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
