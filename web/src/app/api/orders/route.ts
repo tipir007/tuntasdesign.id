@@ -135,7 +135,7 @@ async function notifyTelegram(order: OrderRecord): Promise<void> {
     console.info("[orders] Telegram skipped (missing CALLMEBOT_TELEGRAM_USER)", order.code);
     return;
   }
-  const user = raw.startsWith("@") ? raw : `@${raw}`;
+  const user = raw.replace(/^@/, "");
   const text = buildOrderNotifyText(order);
 
   try {
@@ -231,9 +231,11 @@ export async function POST(request: Request) {
       );
     }
 
-    void notifyAdmin(created);
-    void notifyWhatsApp(created);
-    void notifyTelegram(created);
+    await Promise.allSettled([
+      notifyAdmin(created),
+      notifyWhatsApp(created),
+      notifyTelegram(created)
+    ]);
 
     return NextResponse.json({
       code: created.code,
