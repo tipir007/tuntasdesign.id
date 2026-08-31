@@ -12,6 +12,26 @@ https://designtuntas.vercel.app/marketing/wa-story-designtuntas.png
 
 ---
 
+## Feed Instagram (1:1)
+
+**Download:**  
+https://designtuntas.vercel.app/marketing/ig-feed-designtuntas.png
+
+**Caption (salin):**
+```
+🎨 designtuntas.id
+
+Desain & dokumen, sampai tuntas.
+CV · Skripsi · Visual · 3D
+
+👉 designtuntas.vercel.app
+💬 088901178816
+
+#cv #lamarkerja #skripsi #desaingrafis #3ddesign #freelance #bogor #mahasiswa
+```
+
+---
+
 ## Teks alternatif (Status teks saja)
 
 Salin jika mau status tanpa gambar:
