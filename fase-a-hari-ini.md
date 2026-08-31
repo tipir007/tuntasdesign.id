@@ -108,6 +108,10 @@ https://designtuntas.vercel.app
 Tanya Tuti AI dulu, atau chat WA 088901178816 untuk order CV / skripsi / desain.
 ```
 
+**Status WA (gambar siap upload):**  
+https://designtuntas.vercel.app/marketing/wa-story-designtuntas.png  
+(Download → WhatsApp → Status → Add status → pilih gambar)
+
 ### Chat personal (salin, kirim ke 5 orang)
 ```
 Hai, aku buka jasa designtuntas.id — CV, skripsi, design visual, dan 3D.
