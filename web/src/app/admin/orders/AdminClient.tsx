@@ -11,10 +11,19 @@ import {
   type OrderStatus
 } from "@/lib/orders";
 
+type AdminAnalyticsStats = {
+  pageviews: number;
+  uniqueVisitors: number;
+  pageviewsToday: number;
+  uniqueVisitorsToday: number;
+  topPaths: { path: string; views: number }[];
+};
+
 export default function AdminOrdersPage() {
   const searchParams = useSearchParams();
   const secret = searchParams.get("secret") || "";
   const [orders, setOrders] = useState<OrderRecord[]>([]);
+  const [stats, setStats] = useState<AdminAnalyticsStats | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -22,12 +31,25 @@ export default function AdminOrdersPage() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`/api/orders?secret=${encodeURIComponent(secret)}`, {
-        headers: { "x-admin-secret": secret }
-      });
-      const payload = (await response.json()) as { orders?: OrderRecord[]; error?: string };
-      if (!response.ok) throw new Error(payload.error || "Unauthorized");
-      setOrders(payload.orders || []);
+      const [ordersRes, statsRes] = await Promise.all([
+        fetch(`/api/orders?secret=${encodeURIComponent(secret)}`, {
+          headers: { "x-admin-secret": secret }
+        }),
+        fetch(`/api/analytics/stats?secret=${encodeURIComponent(secret)}`, {
+          headers: { "x-admin-secret": secret }
+        })
+      ]);
+
+      const ordersPayload = (await ordersRes.json()) as { orders?: OrderRecord[]; error?: string };
+      if (!ordersRes.ok) throw new Error(ordersPayload.error || "Unauthorized");
+
+      setOrders(ordersPayload.orders || []);
+
+      if (statsRes.ok) {
+        setStats((await statsRes.json()) as AdminAnalyticsStats);
+      } else {
+        setStats(null);
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Gagal memuat");
     } finally {
@@ -67,8 +89,42 @@ export default function AdminOrdersPage() {
         <h1 className="font-display text-3xl text-ink">Admin orders</h1>
         <p className="mt-2 text-sm text-ink/60">Akses dengan secret. Jangan bagikan URL ini.</p>
         {error ? <p className="mt-4 text-sm text-red-700">{error}</p> : null}
+
+        {stats ? (
+          <section className="mt-8">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-teal">Pengunjung</h2>
+            <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <StatCard label="Unik hari ini" value={stats.uniqueVisitorsToday} />
+              <StatCard label="Kunjungan hari ini" value={stats.pageviewsToday} />
+              <StatCard label="Unik total" value={stats.uniqueVisitors} />
+              <StatCard label="Kunjungan total" value={stats.pageviews} />
+            </div>
+            {stats.topPaths.length > 0 ? (
+              <div className="mt-4 overflow-hidden rounded-xl border border-ink/10">
+                <table className="w-full text-left text-sm">
+                  <thead className="bg-sand text-ink/70">
+                    <tr>
+                      <th className="px-4 py-2 font-medium">Halaman</th>
+                      <th className="px-4 py-2 font-medium text-right">Kunjungan</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {stats.topPaths.map((row) => (
+                      <tr key={row.path} className="border-t border-ink/10">
+                        <td className="px-4 py-2 font-mono text-xs text-ink/80">{row.path}</td>
+                        <td className="px-4 py-2 text-right text-ink">{row.views}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : null}
+          </section>
+        ) : null}
+
         {loading ? <p className="mt-6 text-sm text-ink/60">Memuat…</p> : null}
-        <ul className="mt-8 space-y-4">
+        <h2 className="mt-10 text-sm font-semibold uppercase tracking-wider text-teal">Order</h2>
+        <ul className="mt-4 space-y-4">
           {orders.map((order) => (
             <li key={order.id} className="rounded-xl border border-ink/10 bg-sand p-4">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -107,5 +163,14 @@ export default function AdminOrdersPage() {
         </Link>
       </div>
     </main>
+  );
+}
+
+function StatCard({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="rounded-xl border border-ink/10 bg-sand px-4 py-3">
+      <p className="text-xs text-ink/55">{label}</p>
+      <p className="mt-1 font-display text-2xl text-ink">{value.toLocaleString("id-ID")}</p>
+    </div>
   );
 }

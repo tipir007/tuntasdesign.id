@@ -94,6 +94,7 @@ export type Dictionary = {
     contact: string;
     priceList: string;
     rights: string;
+    visitorStats: (unique: number, views: number) => string;
   };
   brand: {
     tagline: string;
@@ -572,7 +573,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       services: "Layanan",
       contact: "Kontak",
       priceList: "Daftar harga",
-      rights: "Semua hak dilindungi."
+      rights: "Semua hak dilindungi.",
+      visitorStats: (unique, views) => `${unique} pengunjung · ${views} kunjungan`
     },
     brand: {
       tagline: "Siap menyelesaikan masalah Anda sampai tuntas.",
@@ -790,7 +792,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       services: "Services",
       contact: "Contact",
       priceList: "Price list",
-      rights: "All rights reserved."
+      rights: "All rights reserved.",
+      visitorStats: (unique, views) => `${unique} visitors · ${views} views`
     },
     brand: {
       tagline: "Ready to solve your problems until completion.",

@@ -2,6 +2,7 @@
 
 import { BRAND, SERVICES } from "@/data/services";
 import { useLocale } from "@/components/LocaleProvider";
+import VisitorCounter from "@/components/VisitorCounter";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 export default function Footer() {
@@ -64,6 +65,7 @@ export default function Footer() {
       <p className="mx-auto mt-10 max-w-6xl text-xs text-ink/45">
         © {new Date().getFullYear()} {BRAND.name}. {t.footer.rights}
       </p>
+      <VisitorCounter />
     </footer>
   );
 }

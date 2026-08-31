@@ -59,9 +59,9 @@ grant select, insert, update on public.orders to anon, authenticated;
 ### A. Telegram (disarankan — lebih andal)
 
 1. Telegram → cari `@CallMeBot_txtbot` → kirim `/start`
-2. Pastikan Settings → **Username** terisi (contoh `@Chris_Panjaitan`)
+2. Pastikan Settings → **Username** terisi (contoh `@Chrispanjaitan`)
 3. Kalau API masih “Permission denied”, buka: https://api2.callmebot.com/txt/login.php
-4. Env: `CALLMEBOT_TELEGRAM_USER=@Chris_Panjaitan`
+4. Env: `CALLMEBOT_TELEGRAM_USER=@Chrispanjaitan`
 5. Redeploy Vercel
 
 Panduan: https://www.callmebot.com/blog/telegram-text-messages/
@@ -94,19 +94,30 @@ RESEND_API_KEY=
 RESEND_FROM=designtuntas <onboarding@resend.dev>
 CALLMEBOT_PHONE=6288901178816
 CALLMEBOT_APIKEY=
-CALLMEBOT_TELEGRAM_USER=@Chris_Panjaitan
+CALLMEBOT_TELEGRAM_USER=@Chrispanjaitan
 ```
 
 `ADMIN_SECRET` dipakai untuk membuka `/admin/orders?secret=...`
 
 Setelah mengubah env di Vercel: **Redeploy** Production.
 
-## 5. Uji
+## 5. Indikator pengunjung (analytics)
+
+Jalankan script [`scripts/create_analytics.sql`](scripts/create_analytics.sql) di Supabase SQL Editor (sekali).
+
+Setelah deploy:
+- **Footer website** menampilkan `X pengunjung · Y kunjungan` (all-time)
+- **Admin** `/admin/orders?secret=...` menampilkan stat hari ini + total + halaman populer
+
+Tanpa tabel `page_views`, tracking dilewati (footer counter tidak muncul).
+
+## 6. Uji
 
 - `/order` → submit form → dapat kode `DT-XXXX`
-- HP admin menerima WhatsApp (jika CallMeBot sudah diisi)
+- Notifikasi Telegram/WA admin (jika env sudah diisi)
 - `/lacak?kode=DT-XXXX` → status `baru`
-- `/admin/orders?secret=...` → ubah status
+- `/admin/orders?secret=...` → ubah status + lihat stat pengunjung
+- Buka beranda → footer menampilkan counter pengunjung
 
 Tanpa env Supabase, API mengembalikan error konfigurasi (halaman tetap tampil).
 Tanpa `CALLMEBOT_APIKEY`, order tetap tersimpan; hanya notifikasi WA yang dilewati.
